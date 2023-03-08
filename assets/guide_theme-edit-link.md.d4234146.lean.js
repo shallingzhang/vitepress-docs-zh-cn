@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,a as p}from"./app.d6ffb474.js";const C=JSON.parse('{"title":"编辑链接","description":"","frontmatter":{},"headers":[],"relativePath":"guide/theme-edit-link.md","lastUpdated":null}'),l={name:"guide/theme-edit-link.md"},e=p("",5),o=[e];function t(c,r,i,D,y,F){return a(),n("div",null,o)}const A=s(l,[["render",t]]);export{C as __pageData,A as default};

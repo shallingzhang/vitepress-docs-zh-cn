@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,a as o}from"./app.d6ffb474.js";const C=JSON.parse('{"title":"Carbon Ads","description":"","frontmatter":{},"headers":[],"relativePath":"guide/theme-carbon-ads.md","lastUpdated":null}'),e={name:"guide/theme-carbon-ads.md"},l=o("",6),p=[l];function c(t,r,D,d,i,y){return a(),n("div",null,p)}const A=s(e,[["render",c]]);export{C as __pageData,A as default};
