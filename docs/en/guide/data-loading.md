@@ -1,5 +1,3 @@
-# Data Loading
+# Build-Time Data Loading
 
-## Basic Usage
-
-Please refer to the offical website https://vitepress.vuejs.org
+Please refer to the offical website https://vitepress.dev
