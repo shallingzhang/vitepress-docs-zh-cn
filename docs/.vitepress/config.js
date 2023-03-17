@@ -25,7 +25,8 @@ export default defineConfig({
         darkModeSwitchLabel: 'Appearance',
         sidebarMenuLabel: 'Menu',
         returnToTopLabel: 'Return to top',
-        langMenuLabel: 'Change Language'    
+        langMenuLabel: 'Change Language',
+        lastUpdatedText: 'Last Updated'
       }
     }
   }, 
@@ -49,7 +50,7 @@ export default defineConfig({
     siteTitle: 'VitePress',
     i18nRouting: true,
     aside: 'true',
-    lastUpdatedText: '最后更新时间',
+    lastUpdatedText: '最近更新时间',
     outline: 'deep',
     outlineTitle: '本页目录',
     editLink: {
@@ -98,7 +99,7 @@ function nav() {
   return [ 
       { text: '指南', link: '/guide/what-is-vitepress' },
       { text: '参考', link: '/reference/site-config' },
-      { text: '1.0.0-alpha.50',
+      { text: '1.0.0-alpha.60',
          items: [
            { text: '变更日志', link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md' },
            { text: '贡献', link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md' }
@@ -111,7 +112,7 @@ function nav_en() {
   return [ 
       { text: 'Guide', link: '/en/guide/what-is-vitepress' },
       { text: 'Reference', link: '/en/reference/site-config' },
-      { text: '1.0.0-alpha.50',
+      { text: '1.0.0-alpha.60',
          items: [
            { text: 'Changelog', link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md' },
            { text: 'Contributing', link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md' }
@@ -128,26 +129,25 @@ function sidebarReference() {
           { text: '网站配置', link: '/reference/site-config' },
           { text: 'Frontmatter 配置', link: '/reference/frontmatter-config' },
           { text: '运行时 API', link: '/reference/runtime-api' },
-          { text: '命令行接口', link: '/reference/cli' }
+          { text: '命令行接口', link: '/reference/cli' },
+          { text: '默认主题',
+            items: [
+              { text: '概述', link: '/reference/default-theme-config' },
+              { text: '导航栏', link: '/reference/default-theme-nav' },
+              { text: '侧边栏', link: '/reference/default-theme-sidebar' },
+              { text: '主页', link: '/reference/default-theme-home-page' },
+              { text: '页脚', link: '/reference/default-theme-footer' },
+              { text: '布局', link: '/reference/default-theme-layout' },
+              { text: '徽章', link: '/reference/default-theme-badge' },
+              { text: '团队页面', link: '/reference/default-theme-team-page' },
+              { text: '上/下页链接', link: '/reference/default-theme-prev-next-link' },
+              { text: '编辑链接', link: '/reference/default-theme-edit-link' },
+              { text: '最近更新的时间戳', link: '/reference/default-theme-last-updated' },
+              { text: 'Algolia 搜索', link: '/reference/default-theme-search' },
+              { text: 'Carbon Ads', link: '/reference/default-theme-carbon-ads' }
+            ]
+          }
         ]
-    },
-    { text: '默认主题',
-      collapsed: false,
-      items: [
-        { text: '概述', link: '/reference/default-theme-config' },
-        { text: '导航栏', link: '/reference/default-theme-nav' },
-        { text: '侧边栏', link: '/reference/default-theme-sidebar' },
-        { text: '主页', link: '/reference/default-theme-home-page' },
-        { text: '页脚', link: '/reference/default-theme-footer' },
-        { text: '布局', link: '/reference/default-theme-layout' },
-        { text: '徽章', link: '/reference/default-theme-badge' },
-        { text: '团队页面', link: '/reference/default-theme-team-page' },
-        { text: '上/下页链接', link: '/reference/default-theme-prev-next-link' },
-        { text: '编辑链接', link: '/reference/default-theme-edit-link' },
-        { text: '最近更新的时间戳', link: '/reference/default-theme-last-updated' },
-        { text: 'Algolia 搜索', link: '/reference/default-theme-search' },
-        { text: 'Carbon Ads', link: '/reference/default-theme-carbon-ads' }
-      ]
     }
   ]
 }
@@ -160,28 +160,26 @@ function siderbarReference_en() {
         { text: 'Site Config', link: '/en/reference/site-config' },
         { text: 'Frontmatter Config', link: '/en/reference/frontmatter-config' },
         { text: 'Runtime API', link: '/en/reference/runtime-api' },
-        { text: 'CLI', link: '/en/reference/cli' }
-      ]
-    },
-    { text: 'Default Theme',
-      collapsed: false,
-      items: [
-        { text: 'Overview', link: '/en/reference/default-theme-config' },
-        { text: 'Nav', link: '/en/reference/default-theme-nav' },
-        { text: 'Sidebar', link: '/en/reference/default-theme-sidebar' },
-        { text: 'Home Page', link: '/en/reference/default-theme-home-page' },
-        { text: 'Footer', link: '/en/reference/default-theme-footer' },
-        { text: 'Layout', link: '/en/reference/default-theme-layout' },
-        { text: 'Badge', link: '/en/reference/default-theme-badge' },
-        { text: 'Team Page', link: '/en/reference/default-theme-team-page' },
-        { text: 'Prev / Next Links', link: '/en/reference/default-theme-prev-next-link' },
-        { text: 'Edit Link', link: '/en/reference/default-theme-edit-link' },
-        { text: 'Last Updated Timestamp', link: '/en/reference/default-theme-last-updated' },
-        { text: 'Algolia Search', link: '/en/reference/default-theme-search' },
-        { text: 'Carbon Ads', link: '/en/reference/default-theme-carbon-ads' }
+        { text: 'CLI', link: '/en/reference/cli' },
+        { text: 'Default Theme',
+          items: [
+            { text: 'Overview', link: '/en/reference/default-theme-config' },
+            { text: 'Nav', link: '/en/reference/default-theme-nav' },
+            { text: 'Sidebar', link: '/en/reference/default-theme-sidebar' },
+            { text: 'Home Page', link: '/en/reference/default-theme-home-page' },
+            { text: 'Footer', link: '/en/reference/default-theme-footer' },
+            { text: 'Layout', link: '/en/reference/default-theme-layout' },
+            { text: 'Badge', link: '/en/reference/default-theme-badge' },
+            { text: 'Team Page', link: '/en/reference/default-theme-team-page' },
+            { text: 'Prev / Next Links', link: '/en/reference/default-theme-prev-next-link' },
+            { text: 'Edit Link', link: '/en/reference/default-theme-edit-link' },
+            { text: 'Last Updated Timestamp', link: '/en/reference/default-theme-last-updated' },
+            { text: 'Algolia Search', link: '/en/reference/default-theme-search' },
+            { text: 'Carbon Ads', link: '/en/reference/default-theme-carbon-ads' }
+          ]         
+        }
       ]
     }
-
   ]
 }
 
@@ -212,6 +210,7 @@ function sidebarGuide() {
         { text: '使用自定义主题', link: '/guide/custom-theme' },
         { text: '扩展默认主题', link: '/guide/extending-default-theme' },         
         { text: '构建时数据加载', link: '/guide/data-loading' },    
+        { text: 'SSR 兼容性', link: '/guide/ssr-compat' },
         { text: '连接到内容管理系统', link: '/guide/cms' }
       ]
     },
@@ -251,7 +250,8 @@ function sidebarGuide_en() {
         items: [
           { text: 'Using a Custom Theme', link: '/en/guide/custom-theme' },
           { text: 'Extending the Default Theme', link: '/en/guide/extending-default-theme' },         
-          { text: 'Build-Time Data Loading', link: '/en/guide/data-loading' },    
+          { text: 'Build-Time Data Loading', link: '/en/guide/data-loading' },  
+          { text: 'SSR Compatibility', link: '/en/guide/ssr-compat' },  
           { text: 'Connecting to a CMS', link: '/en/guide/cms' }      
         ]
     },
