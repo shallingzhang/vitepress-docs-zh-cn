@@ -137,7 +137,7 @@ jobs:
 
 3. 在项目的根目录中创建一个名为`.gitlab-ci.yml`的文件，内容如下。每当您对内容进行更改时，这将构建和部署您的网站：
 
-   ```yaml
+```yaml
    image: node:16
    pages:
      cache:
@@ -151,9 +151,10 @@ jobs:
          - public
      only:
        - main
-   ```
+```
 
-   4.  或者，如果您想使用`node`的`alpine`版本，则必须手动安装`git`。在这种情况下，上面的代码修改为：
+4.  或者，如果您想使用`node`的`alpine`版本，则必须手动安装`git`。在这种情况下，上面的代码修改为：
+
 ```yaml
 image: node:16-alpine
 pages:

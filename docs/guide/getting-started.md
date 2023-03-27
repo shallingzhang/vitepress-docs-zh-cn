@@ -106,10 +106,10 @@ $ pnpm exec vitepress init
 └─ package.json
 ```
 
-`docs`目录被视为`VitePress`站点的项目根目录。`.vitepress`目录是`.vitepress`的配置文件、开发服务器缓存、构建输出和可选主题定制代码的保留位置。
+`docs`目录被视为`VitePress`站点的项目根目录。`.vitepress`目录是`VitePress`的配置文件、开发服务器缓存、构建输出和可选主题定制代码的保留位置。
 
 ::: tip 注意
-默认情况下，`VitePress`将其开发服务器缓存存储在`.VitePress/cache`中，而生产构建输出存储在`.witepress/dist`中。如果使用`Git`，则应将其添加到`.gitignore`文件中。还可以配置这些位置。
+默认情况下，`VitePress`将其开发服务器缓存存储在`.vitepress/cache`中，而生产构建输出存储在`.vitepress/dist`中。如果使用`Git`，则应将其添加到`.gitignore`文件中。还可以配置这些位置。
 :::
 
 ## 配置文件
@@ -187,8 +187,8 @@ $ pnpm exec vitepress dev docs
 
 ## 下一步是什么？
 
-- 要更好地了解 markdown 文件如何映射到生成的 HTML，请继续阅读路由指南。
-- 要发现更多关于你可以在页面上做什么，比如写`Mmarkdown`内容或使用` Vue `组件，请参考指南的“写作”部分。一个很好的起点是了解`Markdown ` 扩展。
+- 要更好地了解`Markdown` 文件如何映射到生成的 `HTML`，请继续阅读路由指南。
+- 要发现更多关于你可以在页面上做什么，比如写`Markdown`内容或使用` Vue `组件，请参考指南的“写作”部分。一个很好的起点是了解`Markdown ` 扩展。
 - 要探索默认文档主题提供的功能，请查看默认主题配置参考。
 - 如果要进一步自定义网站的外观，请探索如何扩展默认主题或构建自定义主题。
 - 文档站点形成后，请务必阅读部署指南。

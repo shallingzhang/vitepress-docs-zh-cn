@@ -99,7 +99,7 @@ function nav() {
   return [ 
       { text: '指南', link: '/guide/what-is-vitepress' },
       { text: '参考', link: '/reference/site-config' },
-      { text: '1.0.0-alpha.61',
+      { text: '1.0.0-alpha.63',
          items: [
            { text: '变更日志', link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md' },
            { text: '贡献', link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md' }
@@ -112,7 +112,7 @@ function nav_en() {
   return [ 
       { text: 'Guide', link: '/en/guide/what-is-vitepress' },
       { text: 'Reference', link: '/en/reference/site-config' },
-      { text: '1.0.0-alpha.61',
+      { text: '1.0.0-alpha.63',
          items: [
            { text: 'Changelog', link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md' },
            { text: 'Contributing', link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md' }
