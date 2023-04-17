@@ -57,6 +57,30 @@ export default defineConfig({
       pattern: 'https://github.com/shallingzhang/vitepress-docs-zh-cn/docs/:path',
       text: '在 GitHub 上编辑此页'
     },
+    search: {
+      provider: 'local',
+      options: {
+        locales: {
+          root: {
+            translations: {
+              button: {
+                buttonText: '搜索文档',
+                buttonAriaLabel: '搜索文档'
+              },
+              modal: {
+                noResultsText: '无法找到相关结果',
+                resetButtonTitle: '清除查询条件',
+                footer: {
+                  selectText: '选择',
+                  navigateText: '切换',
+                  closeText: '关闭'
+                }
+              }
+            }
+          }
+        }
+      }
+    },
 
     nav: nav(),
             
@@ -75,11 +99,12 @@ export default defineConfig({
       prev: '上一页',
       next: '下一页'
     },
-    algolia: {
+/*    algolia: {
       appId: '8J64VVRP8K',
       apiKey: 'a18e2f4cc5665f6602c5631fd868adfd',
       indexName: 'vitepress'
     },
+*/
     carbonAds: {
       code: 'CEBDT27Y',
       placement: 'vuejsorg'
@@ -99,7 +124,7 @@ function nav() {
   return [ 
       { text: '指南', link: '/guide/what-is-vitepress' },
       { text: '参考', link: '/reference/site-config' },
-      { text: '1.0.0-alpha.65',
+      { text: '1.0.0-alpha.71',
          items: [
            { text: '变更日志', link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md' },
            { text: '贡献', link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md' }
@@ -112,7 +137,7 @@ function nav_en() {
   return [ 
       { text: 'Guide', link: '/en/guide/what-is-vitepress' },
       { text: 'Reference', link: '/en/reference/site-config' },
-      { text: '1.0.0-alpha.65',
+      { text: '1.0.0-alpha.71',
          items: [
            { text: 'Changelog', link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md' },
            { text: 'Contributing', link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md' }
@@ -143,7 +168,7 @@ function sidebarReference() {
               { text: '上/下页链接', link: '/reference/default-theme-prev-next-link' },
               { text: '编辑链接', link: '/reference/default-theme-edit-link' },
               { text: '最近更新的时间戳', link: '/reference/default-theme-last-updated' },
-              { text: 'Algolia 搜索', link: '/reference/default-theme-search' },
+              { text: '搜索', link: '/reference/default-theme-search' },
               { text: 'Carbon Ads', link: '/reference/default-theme-carbon-ads' }
             ]
           }
@@ -174,7 +199,7 @@ function siderbarReference_en() {
             { text: 'Prev / Next Links', link: '/en/reference/default-theme-prev-next-link' },
             { text: 'Edit Link', link: '/en/reference/default-theme-edit-link' },
             { text: 'Last Updated Timestamp', link: '/en/reference/default-theme-last-updated' },
-            { text: 'Algolia Search', link: '/en/reference/default-theme-search' },
+            { text: 'Search', link: '/en/reference/default-theme-search' },
             { text: 'Carbon Ads', link: '/en/reference/default-theme-carbon-ads' }
           ]         
         }

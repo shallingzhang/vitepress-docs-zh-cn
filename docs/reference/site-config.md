@@ -1,3 +1,4 @@
+
 # 网站配置
 
 网站配置是您可以定义站点的全局设置的地方。应用程序配置选项定义应用于每个`VitePress`站点的设置，而不管它使用的是什么主题。例如，基本目录或站点标题。
@@ -26,7 +27,6 @@ export default {
 
 ```js
 import { defineConfig } from 'vitepress'
-
 export default defineConfig({
   // ...
 })
@@ -38,7 +38,6 @@ export default defineConfig({
 
 ```ts
 import { defineConfig } from 'vitepress'
-
 export default defineConfig({
   themeConfig: {
     // Type is `DefaultTheme.Config`
@@ -51,7 +50,6 @@ export default defineConfig({
 ```ts
 import { defineConfigWithTheme } from 'vitepress'
 import type { ThemeConfig } from 'your-theme'
-
 export default defineConfigWithTheme<ThemeConfig>({
   themeConfig: {
     // Type is `ThemeConfig`
@@ -131,9 +129,7 @@ export default {
 - 类型：`string`
 - 默认值：`A VitePress site
 - 可通过`frontmatter`覆盖每页
-
 站点的说明。这将在页面`HTML`中呈现为`＜meta＞`标记。
-
 ```ts
 export default {
   description: 'A VitePress site'
@@ -165,14 +161,10 @@ type HeadConfig =
   | [string, Record<string, string>]
   | [string, Record<string, string>, string]
 ```
-
 ### lang
-
 - 类型: `string`
 - 默认值: `en-US`
-
 站点的语言属性。这将在页面`html`中呈现为`<html lang=“en-US”>`标记。
-
 ```ts
 export default {
   lang: 'en-US'
@@ -366,7 +358,6 @@ export default {
   markdown: {
     theme: 'material-theme-palenight',
     lineNumbers: true,
-
     // adjust how header anchors are generated,
     // useful for integrating with tools that use different conventions
     anchors: {
@@ -389,18 +380,14 @@ interface MarkdownOptions extends MarkdownIt.Options {
   theme?:
     | Shiki.IThemeRegistration
     | { light: Shiki.IThemeRegistration; dark: Shiki.IThemeRegistration }
-
   // Enable line numbers in code block.
   lineNumbers?: boolean
-
   // Add support for your own languages.
   // https://github.com/shikijs/shiki/blob/main/docs/languages.md#supporting-your-own-languages-with-shiki
   languages?: Shiki.ILanguageRegistration
-
   // markdown-it-anchor plugin options.
   // See: https://github.com/valeriangalliat/markdown-it-anchor#usage
   anchor?: anchorPlugin.AnchorOptions
-
   // markdown-it-attrs plugin options.
   // See: https://github.com/arve0/markdown-it-attrs
   attrs?: {
@@ -409,26 +396,20 @@ interface MarkdownOptions extends MarkdownIt.Options {
     allowedAttributes?: string[]
     disable?: boolean
   }
-
   // specify default language for syntax highlighter
   defaultHighlightLang?: string
-
   // @mdit-vue/plugin-frontmatter plugin options.
   // See: https://github.com/mdit-vue/mdit-vue/tree/main/packages/plugin-frontmatter#options
   frontmatter?: FrontmatterPluginOptions
-
   // @mdit-vue/plugin-headers plugin options.
   // See: https://github.com/mdit-vue/mdit-vue/tree/main/packages/plugin-headers#options
   headers?: HeadersPluginOptions
-
   // @mdit-vue/plugin-sfc plugin options.
   // See: https://github.com/mdit-vue/mdit-vue/tree/main/packages/plugin-sfc#options
   sfc?: SfcPluginOptions
-
   // @mdit-vue/plugin-toc plugin options.
   // See: https://github.com/mdit-vue/mdit-vue/tree/main/packages/plugin-toc#options
   toc?: TocPluginOptions
-
   // Configure the Markdown-it instance.
   config?: (md: MarkdownIt) => void
 }
@@ -576,7 +557,6 @@ export default {
   async transformPageData(pageData, { siteConfig }) {
     pageData.contributors = await getPageContributors(pageData.relativePath)
   }
-
   // or return data to be merged
   async transformPageData(pageData, { siteConfig }) {
     return {
@@ -591,11 +571,5 @@ interface TransformPageContext {
   siteConfig: SiteConfig
 }
 ```
-
-
-
-
-
-
 
 
