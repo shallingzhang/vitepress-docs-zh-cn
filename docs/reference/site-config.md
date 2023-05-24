@@ -1,7 +1,7 @@
 
-# 网站配置
+# 站点配置
 
-网站配置是您可以定义站点的全局设置的地方。应用程序配置选项定义应用于每个`VitePress`站点的设置，而不管它使用的是什么主题。例如，基本目录或站点标题。
+站点配置是您可以定义站点的全局设置的地方。`App config`选项定义应用于每个`VitePress`站点的设置，而不管它使用的是什么主题。例如，基本目录或站点标题。
 
 ## 概述
 
@@ -50,6 +50,7 @@ export default defineConfig({
 ```ts
 import { defineConfigWithTheme } from 'vitepress'
 import type { ThemeConfig } from 'your-theme'
+
 export default defineConfigWithTheme<ThemeConfig>({
   themeConfig: {
     // Type is `ThemeConfig`
@@ -71,14 +72,14 @@ export default defineConfigWithTheme<ThemeConfig>({
 
    您可以使用`VitePress`配置中的`markdown`选项来配置底层的`Markdown-it`实例。
    
-## 网站的元数据
+## 站点的元数据
 ### 标题
 
 - 类型： `string`
 - 默认值： `VitePress`
 - 通过`Frontmatter`可以覆盖每页
 
-网站的标题。当使用默认主题时，这将显示在导航栏中。
+站点的标题。当使用默认主题时，这将显示在导航栏中。
 
 它也将用作所有单独页面标题的默认后缀，除非定义了`titleTemplate`。单个页面的最终标题将是其第一个`＜h1＞`标题的文本内容，并以全局标题作为后缀。例如，使用以下配置和页面内容：
 
@@ -150,8 +151,29 @@ export default {
     [
       'link',
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }
+      // would render:
+      //
+      // <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    ],
+
+    [
+      'script',
+      { id: 'register-sw' },
+      `;(() => {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/sw.js')
+        }
+      })()`
+      // would render:
+      //
+      // <script id="register-sw">
+      // ;(() => {
+      //   if ('serviceWorker' in navigator) {
+      //     navigator.serviceWorker.register('/sw.js')
+      //   }
+      // })()
+      // </script>
     ]
-    // would render: <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   ]
 }
 ```
@@ -176,7 +198,9 @@ export default {
 - 默认值： `/`
 
 网站将部署在`base URL`。如果您计划在子路径（例如`GitHub`页面）下部署网站，则需要设置此`base`值。
+
 如果您计划将站点部署到`https://foo.github.io/bar/`，则应将`base`设置为“`/bar/`”。它应该始终以斜线开头和结尾。
+
 在其他选项中，所有以`/`开头的`URL`都会自动加上`base`值，因此只需指定一次。
 
 ```ts
@@ -192,7 +216,7 @@ export default {
 - 类型：`boolean`
 - 默认值：`false`
 
-当设置为`true`时，`VitePress`将从`URL`中删除尾随的`.html`。另请参阅生成干净的`URL`。
+当设置为`true`时，`VitePress`将从`URL`中删除尾随的`.html`。另请参阅 `Generating Clean URL`。
 
 ::: warning 服务器需要支持
 
@@ -260,7 +284,7 @@ export default {
 - 类型：`string`
 - 默认值：`./.vitepress/cache`
 
-缓存文件的目录，相对于项目根目录。
+缓存文件的目录`cacheDir`，相对于项目根目录。
 
 ```ts
 export default {
@@ -283,7 +307,7 @@ export default {
 }
 ```
 
-它也可以是extact url字符串、正则表达式模式或自定义过滤函数的数组。
+它也可以是一个精确的`url`字符串、正则表达式模式或自定义过滤函数的数组。
 
 ```ts
 export default {
@@ -358,6 +382,7 @@ export default {
   markdown: {
     theme: 'material-theme-palenight',
     lineNumbers: true,
+      
     // adjust how header anchors are generated,
     // useful for integrating with tools that use different conventions
     anchors: {
@@ -571,5 +596,4 @@ interface TransformPageContext {
   siteConfig: SiteConfig
 }
 ```
-
 

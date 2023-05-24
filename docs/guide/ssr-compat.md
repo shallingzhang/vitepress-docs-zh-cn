@@ -77,4 +77,39 @@ const ClientComp = defineClientComponent(() => {
 </template>
 ```
 
-目标组件只会被导入包装器组件的挂载钩子中。
+您还可以将`props`/`children`/`slots`传递到目标组件：
+
+```vue
+<script setup>
+import { ref } from 'vue'
+import { defineClientComponent } from 'vitepress'
+
+const clientCompRef = ref(null)
+const ClientComp = defineClientComponent(
+  () => import('component-that-access-window-on-import'),
+
+  // args are passed to h() - https://vuejs.org/api/render-function.html#h
+  [
+    {
+      ref: clientCompRef
+    },
+    {
+      default: () => 'default slot',
+      foo: () => h('div', 'foo'),
+      bar: () => [h('span', 'one'), h('span', 'two')]
+    }
+  ],
+
+  // callback after the component is loaded, can be async
+  () => {
+    console.log(clientCompRef.value)
+  }
+)
+</script>
+
+<template>
+  <ClientComp />
+</template>
+```
+
+目标组件将仅在包装器组件的已安装挂钩中导入。

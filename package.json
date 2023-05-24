@@ -1,8 +1,8 @@
 {
   "devDependencies": {
     "@algolia/client-search": "^4.17.0",
-    "vitepress": "^1.0.0-alpha.75",
-    "vue": "^3.2.47"
+    "vitepress": "^1.0.0-beta.1",
+    "vue": "^3.3.4"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",
